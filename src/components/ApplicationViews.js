@@ -8,15 +8,13 @@ import { ProductList } from "../product/ProductList";
 export const ApplicationViews = (props) => {
     return (
         <>
-            <h2>Locations</h2>
             <LocationProvider>
                 {/* Render the location list when http://localhost:3000/ */}
-                <Route exact path="/">
+                <Route exact path="/locations">
                     <LocationList />
                 </Route>
             </LocationProvider>
 
-            <h2>Products</h2>
             <ProductProvider>
                 {/* Render the animal list when http://localhost:3000/prodcuts */}
                 <Route path="/products">
