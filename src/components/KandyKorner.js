@@ -1,10 +1,15 @@
-
 import React from "react"
-// import { Route } from "react-router-dom"
 
-export const KandyKorner = () => (
-    <>
-        <h1>Kandy Korner</h1>
-    </>
+import { NavBar } from "./NavBar"
+import { ApplicationViews } from "./ApplicationViews"
+
+
+export const KandyKorner = () => {
+    return (
+        <>
+            <NavBar />
+            <ApplicationViews />
+        </>
     )
+}
     
