@@ -21,9 +21,11 @@ export const ProductList = () => {
         getProducts() 
         getProductTypes()
         getLocations()
-
     }, [])
     // debugger
+    useEffect(() => {
+        console.log("ProductList state change")
+    },[products])
     
     if ( products.length && productTypes.length && locations.length) {
         // this logic prevents the website from breaking if getProductTypes takes too long

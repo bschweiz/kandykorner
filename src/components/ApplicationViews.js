@@ -4,6 +4,8 @@ import { LocationProvider } from "../location/LocationProvider";
 import { LocationList } from "../location/LocationList";
 import { ProductProvider } from "../product/ProductProvider";
 import { ProductList } from "../product/ProductList";
+import { EmployeeProvider } from "../employee/EmployeeProvider";
+import { EmployeeList } from "../employee/EmployeeList";
 import { ProductTypeProvider } from "../product/ProductTypeProvider";
 
 export const ApplicationViews = (props) => {
@@ -25,6 +27,15 @@ export const ApplicationViews = (props) => {
                     </Route>
                 </ProductTypeProvider>
             </ProductProvider>
+            </LocationProvider>
+            
+            <LocationProvider>
+            <EmployeeProvider>
+                    {/* Render the animal list when http://localhost:3000/prodcuts */}
+                    <Route exact path="/employees">
+                        <EmployeeList />
+                    </Route>
+            </EmployeeProvider>
             </LocationProvider>
         </>
     )
