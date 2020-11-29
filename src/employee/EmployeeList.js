@@ -19,6 +19,7 @@ export const EmployeeList = (props) => {
         console.log(employees)
     }, [employees])
 
+    if ( employees.length && locations.length) {
     return (
         <div className="employees">
             <h1>Employees</h1>
@@ -38,5 +39,5 @@ export const EmployeeList = (props) => {
             
             </article>
         </div>
-    )
+    )} else {return<div></div>}
 }
