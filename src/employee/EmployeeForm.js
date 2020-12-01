@@ -1,27 +1,27 @@
 import React, {useContext, useRef, useEffect} from 'react'
 import { EmployeeContext } from "./EmployeeProvider"
 import { LocationContext } from "../location/LocationProvider"
+import "./Employee.css"
 
 export const EmployeeForm = (props) => {
-    const {addEmployee} = useContext(EmployeeContext)
+    const { addEmployee} = useContext(EmployeeContext)
     const {locations, getLocations} = useContext(LocationContext)
 
-    const nam = useRef(null)
+    const name= useRef(null)
     const location = useRef(null)
+    
     useEffect(() => {
-    getEmployees().then(getLocations)
+    getLocations()
     }, [])
 
-    const ConstructNewEmployee = () => {
+    const constructNewEmployee = () => {
         const locationId = parseInt(location.current.value)
-        const animalId = parseInt(location.current.value)
         if (locationId === 0) {
             window.alert("Please select a location")
         } else {
             addEmployee({
                 name: name.current.value,
-                locationId,
-                animalId
+                locationId
             })
             .then(() => props.history.push("/employees"))
         }
